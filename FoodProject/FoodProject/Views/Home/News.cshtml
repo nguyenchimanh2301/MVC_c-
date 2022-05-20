@@ -1,0 +1,205 @@
+﻿
+@{
+    ViewBag.Title = "News";
+    Layout = "~/Views/Shared/_LayoutList.cshtml";
+}
+
+
+
+
+    <div ng-init="ListNew()"></div>
+    <section class="categories_product_main p_80">
+        <div class="container">
+            <div class="categories_main_inner">
+                <div class="row row_disable">
+                    <div class="col-lg-9 float-md-right">
+                        <div class="showing_fillter">
+                            <div class="row m0">
+                                <div class="first_fillter">
+                                    <h4>Showing 1 to 12 of 30 total</h4>
+                                </div>
+                                <div class="secand_fillter">
+                                    <h4>SORT BY :</h4>
+                                    <select class="selectpicker">
+                                        <option>Name</option>
+                                        <option>Name 2</option>
+                                        <option>Name 3</option>
+                                    </select>
+                                </div>
+                                <div class="third_fillter">
+                                    <h4>Show : </h4>
+                                    <select class="selectpicker">
+                                        <option>09</option>
+                                        <option>10</option>
+                                        <option>10</option>
+                                    </select>
+                                </div>
+                                <div class="four_fillter">
+                                    <h4>View</h4>
+                                    <a class="active" href="#"><i class="icon_grid-2x2"></i></a>
+                                    <a href="#"><i class="icon_grid-3x3"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c_product_grid_details">
+                            <div class="c_product_item ">
+                                <div class="row" ng-repeat="item in listLoaiSP">
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="c_product_img">
+                                          <img src="/{{item.Anh}}" style="object-fit:cover;width:500px;height:200px;">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-6">
+                                        <div class="c_product_text">
+                                            <h3>{{item.Tieude}}</h3>
+                                       
+                                            <div style="overflow:hidden;height:80px"> <p>{{item.Noidung}}<p></div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <nav aria-label="Page navigation example" class="pagination_area">
+                                <ul class="pagination">
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                    <li class="page-item next"><a class="page-link" href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 float-md-right">
+                        <div class="categories_sidebar">
+                            <aside class="l_widgest l_p_categories_widget">
+                                <div class="l_w_title">
+                                    <h3>Thông tin</h3>
+                                </div>
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                             Tin thị trường
+                                            <i class="icon_plus" aria-hidden="true"></i>
+                                            <i class="icon_minus-06" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                         Gía hoa quả
+                                            <i class="icon_plus" aria-hidden="true"></i>
+                                            <i class="icon_minus-06" aria-hidden="true"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li class="nav-item"><a class="nav-link" href="#">Hoodies & Sweatshirts</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Jackets & Coats</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Blouses & Shirts</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                          Gía hải sản
+                                            <i class="icon_plus" aria-hidden="true"></i>
+                                            <i class="icon_minus-06" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                         Thực phẩm nhập khẩu
+                                            <i class="icon_plus" aria-hidden="true"></i>
+                                            <i class="icon_minus-06" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link disabled" href="#">
+                                           Công thức nấu ăn
+                                            <i class="icon_plus" aria-hidden="true"></i>
+                                            <i class="icon_minus-06" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                   
+                                </ul>
+                            </aside>
+                            <aside class="l_widgest l_fillter_widget">
+                                <div class="l_w_title">
+                                    <h3>Filter section</h3>
+                                </div>
+                                <div id="slider-range" class="ui_slider"></div>
+                                <label for="amount">Price:</label>
+                                <input type="text" id="amount" readonly>
+                            </aside>
+                            <aside class="l_widgest l_color_widget">
+                                <div class="l_w_title">
+                                    <h3>Color</h3>
+                                </div>
+                                <ul>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                </ul>
+                            </aside>
+                            <aside class="l_widgest l_menufacture_widget">
+                                <div class="l_w_title">
+                                    <h3>LIÊN QUAN</h3>
+                                </div>
+                                <ul>
+                                    <li><a href="#">Các nhà hàng nổi tiếng</a></li>
+                                    <li><a href="#">Đồ ăn nước ngoài</a></li>
+                                    <li><a href="#">Hoa quả nhập khẩu</a></li>
+                                    <li><a href="#">Thịt tươi </a></li>
+                                    <li><a href="#">Thực phẩm sạch</a></li>
+                                </ul>
+                            </aside>
+                            <aside class="l_widgest l_feature_widget">
+                                <div class="l_w_title">
+                                    <h3>Featured Products</h3>
+                                </div>
+                                <div class="media">
+                                    <div class="d-flex">
+                                 
+                                    </div>
+                                    <div class="media-body">
+                                        <h4>Jeans with <br /> Frayed Hems</h4>
+                                        <h5>$45.05</h5>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <div class="d-flex">
+                                  
+                                    </div>
+                                    <div class="media-body">
+                                        <h4>Crysp Denim<br />Montana</h4>
+                                        <h5>$45.05</h5>
+                                    </div>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
